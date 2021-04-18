@@ -15,7 +15,7 @@ ul, li, ol, a{
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .wrapper{
     width: 100vw;
@@ -36,9 +36,10 @@ body{
 .user-info{
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .user-info__logo{
-    margin-right: 20px;
+    margin-right: 70px;
     flex-basis: 60px;
     position: relative;
 }
@@ -53,7 +54,8 @@ body{
     display: flex;
     flex-direction: column;
     white-space:nowrap;
-    flex-grow: 1;
+    min-width: 0;
+    margin-right: 20px;
 }
 .user-info__name{
     font-size: 18px;
@@ -61,7 +63,9 @@ body{
     font-weight: bold;
     color: #0D1C2E;
     margin-bottom: 6px;
-    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .user-info__status{
     font-size: 16px;
@@ -197,8 +201,9 @@ body{
     transform: translateY(-50%);
     background-position: center;
 }
-.msg-lt-wrapper{
-    
+.chat__main{
+    height: 550px;
+    overflow-y: scroll;
 }
 .message-lasttime span{
     width: 510px;
@@ -212,4 +217,28 @@ body{
     height: 54px;
     border-radius: 50%;
     overflow: hidden;
+}
+.chat__input::before{
+    content: '';
+    display: block;
+    width: 100%;
+    border: 3px solid red;
+    border-radius: 8px;
+    background-color: red;
+}
+.chat{
+    display: flex;
+    flex-direction: column;
+}
+._gaps:nth-child(1){
+    flex-basis: 110px;
+}
+._gaps:nth-child(3){
+    flex-basis: 100px;
+}
+._gaps:nth-child(2){
+    flex-grow: 1;
+}
+.chat__input{
+    padding-top: 0;
 }
