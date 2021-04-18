@@ -1,0 +1,215 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+}
+ul, li, ol, a{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
+}
+._gaps{
+    padding: 28px 60px;
+}
+.chat__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FAFBFF;
+    border-radius: 6px 6px 0px 0px;
+    border-bottom: 2px solid rgba(112, 124, 151, 0.1);
+}
+.user-info{
+    display: flex;
+    align-items: center;
+}
+.user-info__logo{
+    margin-right: 20px;
+    flex-basis: 60px;
+    position: relative;
+}
+.user-info > .avatar{
+    overflow: unset;
+}
+.chat-header__settings{
+    display: flex;
+    flex-basis: 124px;
+}
+.user-info__text{
+    display: flex;
+    flex-direction: column;
+    white-space:nowrap;
+    flex-grow: 1;
+}
+.user-info__name{
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #0D1C2E;
+    margin-bottom: 6px;
+    
+}
+.user-info__status{
+    font-size: 16px;
+    line-height: 19px;
+    color: #2A8BF2;
+}
+.settings{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    margin-right: 20px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.03), 0px 7px 25px rgba(42, 139, 242, 0.03), 0px 5px 25px rgba(42, 139, 242, 0.07);
+}
+.settings img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.settings:last-child{
+    margin-right: 0;
+}
+.settings:hover{
+    background: #c1c1c1;
+    cursor: pointer;
+    transition: .3s;
+    transition: ease-in;
+}
+.messages{
+    width: 100%;
+}
+.message{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    max-width: 620px;
+    margin-bottom: 15px;
+}
+.avatar{
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.avatar__img{
+    width: 100%;
+}
+.avatar-msg{
+    width: 36px;
+    height: 36px;
+    margin-right: 24px;
+    flex-basis: 36px;
+}
+.message-content{
+    padding: 20px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #FFFFFF;
+    background: linear-gradient(90.54deg, #60A9F6 0%, #2A8BF2 100%);
+    box-shadow: 10px 10px 25px rgba(42, 139, 242, 0.1), 15px 15px 35px rgba(42, 139, 242, 0.05), 10px 10px 50px rgba(42, 139, 242, 0.1);
+    border-radius: 0px 10px 10px 10px;
+    max-width: 510px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    order: 1;
+    position: relative;
+}
+.message-settings{
+    order: 2;
+}
+.message-lasttime{
+    font-size: 14px;
+    line-height: 26px;
+    color: rgba(112, 124, 151, 0.7); 
+    display: flex;
+    width: 100%;
+    padding-right: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.message__cont-time{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.message-logo{
+    align-self: flex-start;
+}
+.message-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.your-message{
+    align-items: flex-end;
+    
+}
+.your-message .message-content{
+    font-size: 16px;
+    line-height: 26px;
+    color: #707C97;
+    background: #FFFFFF;
+    border: 1px solid rgba(112, 124, 151, 0.25);
+    box-sizing: border-box;
+    box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+}
+.your-message .message__cont-time{
+    flex-direction: row-reverse;
+}
+.your-message img{
+    display: none;
+    width: 0;
+}
+.your-message .avatar-msg{
+    width: 0;
+    margin: 0;
+}
+.your-message .message-content::after{
+    content: "";
+    background-image: url('/lesson-2/assets/mask.svg');
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    background-position: center;
+}
+.msg-lt-wrapper{
+    
+}
+.message-lasttime span{
+    width: 510px;
+    margin-left: 60px;
+    text-align: end;
+}
+.header-avatar-wrap{
+    position: absolute;
+    top: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    overflow: hidden;
+}
