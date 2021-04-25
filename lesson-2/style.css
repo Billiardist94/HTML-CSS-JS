@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
 }
-html, body{
+html, body, input{
     padding: 0;
     margin: 0;
     border: 0;
@@ -15,7 +15,7 @@ ul, li, ol, a{
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .wrapper{
     width: 100vw;
@@ -36,6 +36,7 @@ body{
 .user-info{
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .user-info__logo{
     margin-right: 20px;
@@ -53,7 +54,8 @@ body{
     display: flex;
     flex-direction: column;
     white-space:nowrap;
-    flex-grow: 1;
+    min-width: 0;
+    margin-right: 20px;
 }
 .user-info__name{
     font-size: 18px;
@@ -61,7 +63,9 @@ body{
     font-weight: bold;
     color: #0D1C2E;
     margin-bottom: 6px;
-    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .user-info__status{
     font-size: 16px;
@@ -92,8 +96,7 @@ body{
 .settings:hover{
     background: #c1c1c1;
     cursor: pointer;
-    transition: .3s;
-    transition: ease-in;
+    transition: ease-in, .3s;
 }
 .messages{
     width: 100%;
@@ -111,6 +114,7 @@ body{
     height: 54px;
     border-radius: 50%;
     overflow: hidden;
+    flex-shrink: 0;
 }
 .avatar__img{
     width: 100%;
@@ -120,6 +124,7 @@ body{
     height: 36px;
     margin-right: 24px;
     flex-basis: 36px;
+    flex-shrink: 0;
 }
 .message-content{
     padding: 20px;
@@ -197,8 +202,9 @@ body{
     transform: translateY(-50%);
     background-position: center;
 }
-.msg-lt-wrapper{
-    
+.chat__main{
+    height: 550px;
+    overflow-y: scroll;
 }
 .message-lasttime span{
     width: 510px;
@@ -212,4 +218,115 @@ body{
     height: 54px;
     border-radius: 50%;
     overflow: hidden;
+}
+.chat__input::before{
+    content: '';
+    display: block;
+    width: 100%;
+    border: 3px solid red;
+    border-radius: 8px;
+    background-color: red;
+}
+.chat{
+    display: flex;
+    flex-direction: column;
+}
+._gaps:nth-child(1){
+    flex-basis: 110px;
+}
+._gaps:nth-child(3){
+    flex-basis: 100px;
+}
+._gaps:nth-child(2){
+    flex-grow: 1;
+}
+.chat__input{
+    padding-top: 0;
+}
+.chat__input-form{
+    display: flex;
+}
+.btn-attach{
+    position: relative;
+    width: 40px;
+}
+.plus{
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #2A8BF2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.plus-hidden{
+    position: absolute;
+    transition: all 1s;
+}
+.btn-attach-plus{
+    height: 0px;
+    width: 0;
+    position: relative;
+}
+.btn-attach-plus::before{
+    content: "";
+    display: block;
+    height: 40px;
+    width: 40px;
+    background-image: url(/lesson-2/assets/icon-add.svg);
+    z-index: 10;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-color: #2A8BF2;
+    background-position: center;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    transition: all 1s;
+    
+}
+.btn-attach-docs{
+    background-image: url(/lesson-2/assets/icon_file.svg);
+    z-index: 9;
+}
+.btn-attach-img{
+    background-image: url(/lesson-2/assets/icon_photo.svg);
+    z-index: 8;
+}
+.btn-attach-video{
+    background-image: url(/lesson-2/assets/icon_video.svg);
+    z-index: 7;
+}
+.btn-send-msg{
+    background-image: url(/lesson-2/assets/send_icon.svg);
+    color: transparent;
+}
+.btn-attach-smile{
+    background-image: url(/lesson-2/assets/smile_icon.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    border: 0;
+    width: 24px;
+    cursor: pointer;
+}
+.btn-attach:hover>.btn-attach-docs,
+.btn-attach-plus:checked~.btn-attach-docs{
+    top: -50px;
+    transition: all 1s;
+}
+.btn-attach:hover>.btn-attach-img,
+.btn-attach-plus:checked~.btn-attach-img{
+    top: -100px;
+    transition: all 1s;
+}
+.btn-attach:hover>.btn-attach-video,
+.btn-attach-plus:checked~.btn-attach-video{
+    top: -150px;
+    transition: all 1s;
 }
