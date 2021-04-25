@@ -130,8 +130,15 @@
             </div>
             <div class="chat__input _gaps">
                 <form action="post" class="chat__input-form form">
-                    <input type="text" class="form__input">
-                    <input type="submit" class="form__btn">
+                    <div class="btn-attach">
+                        <input type="checkbox" class="btn-attach-plus plus plus-hidden">
+                        <input type="button" class="btn-attach-docs plus plus-hidden">
+                        <input type="button" class="btn-attach-img plus plus-hidden">
+                        <input type="button" class="btn-attach-video plus plus-hidden">
+                    </div>
+                    <textarea class="form__input"></textarea>
+                    <input type="button" class="btn-attach-smile">
+                    <input type="submit" class="btn-send-msg plus">
                 </form>
             </div>
         </div>
