@@ -1,31 +1,55 @@
-const firstName = prompt('Введите ваше имя: ');
-function userLastName(value) {
-    return value;
-}
-const lastName = userLastName(prompt('Введите фамилию'));
-if (lastName === '') {
-    alert(`Поле не заполнено. Попробуйте снова.`)
-    userLastName(prompt('Введите фамилию'));
-}
-const patronymic = prompt('Введите ваше отчество: ');
-const fullName = `${lastName} ${firstName} ${patronymic}`;
-const age = prompt('Введите ваш возраст: ');
-const userGender = confirm('Ваш пол - мужской?');
-if (userGender) {
-    gender = 'мужской'
-} else{
-    gender = 'женский'}
-alert(`
-${'Ваше ФИО:'} ${fullName}
-${'Ваш возраст:'} ${age}
-${'Ваш пол:'} ${gender}
-`);
+// let firstName = prompt('Введите ваше имя: ');
+// while (firstName === '') {
+//     alert(`Поле не заполнено. Попробуйте снова.`)
+//     firstName = prompt('Введите ваше имя: ');
+// }
+// let lastName = prompt('Введите фамилию');
+// while (lastName === '') {
+//     alert(`Поле не заполнено. Попробуйте снова.`)
+//     lastName = prompt('Введите фамилию');
+// }
+// const patronymic = prompt('Введите ваше отчество: ');
+// const fullName = `${lastName} ${firstName} ${patronymic}`;
+// let age = prompt('Введите ваш возраст: ');
+// while (age === '') {
+//     alert(`Поле не заполнено. Попробуйте снова.`)
+//     age = prompt('Введите ваш возраст: ');
+// }
+// while (isNaN(age)) {
+//     alert(`Поле заполнено неверно. Попробуйте снова.`)
+//     age = prompt('Введите ваш возраст: ');
+// }
+// const userGender = confirm('Ваш пол - мужской?');
+// if (userGender) {
+//     gender = 'мужской'
+// } else{
+//     gender = 'женский'}
+// alert(`
+// ${'Ваше ФИО:'} ${fullName}
+// ${'Ваш возраст:'} ${age}
+// ${'Ваш пол:'} ${gender}
+// `);
 //--------------------------------------------------------------------
 // function getUserInfo(firstName, lastName, patronymic, age, gender) {
-//     gender = (gender) ? 'мужской' : 'женский';
+//     gender = gender ? 'мужской' : 'женский';
 //     if ((firstName && lastName && patronymic && age) === '') {
 //         alert('Поле не заполнено. Попробуйте еще раз.')
-//         getUserInfo(prompt('Введите ваше имя: '), prompt('Введите фамилию'), prompt('Введите ваше отчество: '), prompt('Введите ваш возраст: '), confirm('Ваш пол - мужской?'))
+//         getUserInfo(
+//             prompt('Введите ваше имя: '), 
+//             prompt('Введите фамилию'), 
+//             prompt('Введите ваше отчество: '), 
+//             prompt('Введите ваш возраст: '), 
+//             confirm('Ваш пол - мужской?')
+//         );
+//     }
+//     else if (isNaN(age)) {
+//         // console.log(age);
+//         // console.log(typeof age);
+//         alert('Значение введено неверно.')
+//         Number.parseInt(age, 10);
+//         // getUserInfo(
+//         //     age=prompt('Введите ваш возраст: '), 
+//         // );
 //     }
 //     alert(`
 // ${'Ваше ФИО:'} ${firstName} ${lastName} ${patronymic}
@@ -34,45 +58,79 @@ ${'Ваш пол:'} ${gender}
 // `);
 // }
 // const userInfo = getUserInfo
-// userInfo(prompt('Введите ваше имя: '), prompt('Введите фамилию'), prompt('Введите ваше отчество: '), prompt('Введите ваш возраст: '), confirm('Ваш пол - мужской?'))
-//--------------------------------------------------------------------
-// //-------firstName-------
-// const getFirstName = function (firstName) {
-//     return firstName
-// }
-// const userFirstName = getFirstName(prompt('Введите имя: '))
-// //-------lastName-------
-// const getLastName = function (lastName) {
-//     return lastName
-// }
-// const userLastName = getLastName
-// //-------patronymic-------
-// const getPatronymic = function (patronymic) {
-//     return patronymic
-// }
-// const userPatronymic = getPatronymic
-// //-------age-------
-// const getAge = function (age) {
-//     return age
-// }
-// const userAge = getAge
-// //-------gender-------
-// const getGender = function (gender) {
-//     return gender
-// }
-// const userGender = getGender
-// //-------alert-------
-// alert(`
-// ${'Ваше ФИО:'} ${userFirstName} ${userLastName(prompt('Введите фамилию: '))} ${userPatronymic(prompt('Введите отчество: '))}
-// ${'Ваш возраст:'} ${userAge(prompt('Введите возраст: '))}
-// ${'Ваш пол:'} ${userGender(confirm('Ваш пол - мужской?'))}
-// `);
+// userInfo(
+//     prompt('Введите ваше имя: '), 
+//     prompt('Введите фамилию'), 
+//     prompt('Введите ваше отчество: '), 
+//     prompt('Введите ваш возраст: '), 
+//     confirm('Ваш пол - мужской?')
+// );
 //-------------------------------------------------------------------------
 // const treeSum = function (arr){
 //     const str = arr.toString().replace(/[\s.,%]/g, '');
 //     return Array.from(str).reduce((total, curValue) => Number(total) + Number(curValue));
 // }
-// console.log(treeSum([ 5, 7, [ 4, [2], 8, [1,3], 2 ], [ 9, [] ], 1, 8]));
+// console.log(treeSum([ 5, 7, [[3,[3,[6]]]]]));
+//-----------------------------------------------------------------------------
+// const treeSum = function (arr) {
+//     let total = 0;
+    
+//     let checkReplays = function (item) {
+//         if (item instanceof Object && item.length >= 0) {
+//             item.forEach(value => {
+//                 total += (value);
+//                 console.log(total);
+//             })
+//         }
+//     }
+
+//     let checkForArr = function (item) {
+//         if (typeof item === 'number') {
+//             total += item;
+//         }
+//     }
+
+//     arr.forEach(item => {
+//         checkReplays(item)
+//         checkForArr(item)
+//     })
+    
+//     console.log('Финальный total', total);
+//     return total
+// }
+// console.log(treeSum([ 5, 7, [3, 8, [4]]]));
+//-----------------------------------------------------------------------------
+const str = 'А роза упала на лапу Азора';
+const arr = str.split('')
+const filteredArr = arr.filter(item => { 
+    return !item.includes(' ')
+})
+console.log(filteredArr);
+const revArr = filteredArr.reverse()
+console.log(revArr);
+const str1 = filteredArr.join('')
+console.log(str1);
+const str2 = arr.filter(item => { 
+    return !item.includes(' ')
+}).join('')
+console.log(str2);
+console.log(str1.toLowerCase === str2.toLowerCase);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------------------------------------------------------------------------
 // const arr = [
 //     {
@@ -93,12 +151,5 @@ ${'Ваш пол:'} ${gender}
 // arr.forEach(item => {
 //     console.log(item.numbers)
 // })
-
-
-
-
-
-
-
 
 
