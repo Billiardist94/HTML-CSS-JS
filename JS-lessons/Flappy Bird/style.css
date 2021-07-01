@@ -1,0 +1,94 @@
+.container {
+    position: relative;
+    width: 432px;
+    height: 768px;
+}
+.gameScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.sky {
+    position: absolute;
+    background-image: url(images/bg.png);
+    width: 100%;
+    height: 80%;
+    background-repeat: no-repeat;
+    background-color: #4ec0ca;
+    background-size: cover;
+    top: 0;
+}
+.flyArea {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+.bird {
+    position: absolute;
+    width: 38px;
+    height: 26px;
+    background-image: url(images/flappy_bird_bird.png);
+}
+#player{
+    top: 50%;
+    left: 40%;
+
+}
+.scoreBoard {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background-color: rgb(216, 196, 160);
+    border-radius: 8px;
+    border: 2px solid black;
+    top: 20%;
+    left: 40%;
+}
+.curScore {
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    left: 30%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+.bestScore {
+    position: absolute;
+    text-align: center;
+    top: 90px;
+    left: 33%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+.buttonsBoard {
+    position: absolute;
+    top: 430px;
+    left: 130px;
+    height: 115px;
+    width: 200px;
+    cursor: pointer;
+
+}
+.btn{
+    border: 2px double  black;
+    background-color: orange;
+    color: #fff;
+    cursor: pointer;
+    height: 30px;
+}
+.restartBtn {
+
+}
+.shareBtn {
+}
+.addToLeaderBoardBtn {
+}
+.land {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-image: url(images/fg.png);
+    background-repeat: repeat-x;
+}
