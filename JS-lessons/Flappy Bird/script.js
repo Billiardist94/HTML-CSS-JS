@@ -110,6 +110,7 @@ class Bird {
       this.btnStart.disabled = true
       this.step()
       this.gameOver = false
+      this.step()
     }
 
     continue(event) {
