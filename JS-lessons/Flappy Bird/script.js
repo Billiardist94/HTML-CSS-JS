@@ -108,7 +108,6 @@ class Bird {
       pipes.init()
       this.gamePaused = false
       this.btnStart.disabled = true
-      this.step()
       this.gameOver = false
       this.step()
     }
@@ -122,6 +121,7 @@ class Bird {
       this.bird.speed = 1
       this.step()
       this.btnStart.disabled = true
+      this.btnPause.disabled = false
     }
 
     pause(event) {
@@ -130,6 +130,7 @@ class Bird {
       }
       this.gamePaused = true
       this.btnStart.disabled = false
+      this.btnPause.disabled = true
       if (!this.gameOver) {
         this.container.replaceChild(this.btnContinue, this.btnStart)
       } 
